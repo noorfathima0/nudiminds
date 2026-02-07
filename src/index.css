@@ -308,66 +308,73 @@ body {
 
 }
 
-
 /* =====================================================
-   HERO (PREMIUM)
+   HERO (VIDEO BACKGROUND - SAME LAYOUT)
 ===================================================== */
 
 .hero {
-  min-height:100vh;
+  min-height: 100vh;
 
-  background:
-    radial-gradient(circle at top right,#2563eb22,transparent 60%),
-    linear-gradient(135deg,#1e3a8a,#2563eb);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  overflow: hidden; /* Important */
+
   background-size: cover;
 }
 
-.hero-overlay { position: absolute; inset: 0; background: rgba(49, 66, 250, 0.25); }
 
+/* Background Video */
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+
+/* Overlay (Keep Your Existing One) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(49, 66, 250, 0.25);
+
+  z-index: 1;
+}
+
+
+/* Texture Overlay (Keep Yours) */
 .hero::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:url("https://www.transparenttextures.com/patterns/cubes.png");
-  opacity:.06;
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("https://www.transparenttextures.com/patterns/cubes.png");
+  opacity: 0.06;
+
+  z-index: 2;
 }
 
+
+/* Content Layer */
 .hero-content {
-  z-index:10;
-  text-align:center;
-  max-width:900px;
-  padding:30px;
+  position: relative;
+  z-index: 10;
 
-  color:white;
-  animation:fadeUp 1.2s ease;
+  text-align: center;
+  max-width: 900px;
+  padding: 30px;
+
+  color: white;
+  animation: fadeUp 1.2s ease;
 }
-
-.hero-small {
-  letter-spacing:2px;
-  text-transform:uppercase;
-  opacity:.9;
-  margin-bottom:16px;
-}
-
-.hero h1 {
-  font-size:58px;
-  line-height:1.15;
-  margin-bottom:25px;
-}
-
-.hero-desc {
-  font-size:20px;
-  opacity:.95;
-  margin-bottom:45px;
-}
-
-
-
 /* Buttons */
 
 .hero-buttons {
@@ -435,7 +442,7 @@ body {
 
 .mission-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
   gap:40px;
   max-width:1100px;
   margin:auto;

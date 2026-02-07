@@ -1,13 +1,25 @@
-import heroImg from "../assets/hero.jpg";
+import heroVideo from "../assets/hero.mp4";
 
 function Hero() {
   return (
-    <section
-      className="hero"
-      style={{ backgroundImage: `url(${heroImg})` }}
-    >
+    <section className="hero">
+
+      {/* Background Video */}
+      <video
+        className="hero-bg-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src={heroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay */}
       <div className="hero-overlay"></div>
 
+      {/* Content */}
       <div className="hero-content">
         <p className="hero-small">Welcome to</p>
 
@@ -21,6 +33,7 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
+
           <button className="btn-primary">
             Learn More →
           </button>
@@ -28,8 +41,10 @@ function Hero() {
           <button className="btn-outline">
             Join Us
           </button>
+
         </div>
       </div>
+
     </section>
   );
 }
