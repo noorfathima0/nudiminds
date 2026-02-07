@@ -375,6 +375,12 @@ body {
   color: white;
   animation: fadeUp 1.2s ease;
 }
+
+.hero-small { letter-spacing:2px; text-transform:uppercase; opacity:.9; margin-bottom:16px; } 
+
+.hero h1 { font-size:58px; line-height:1.15; margin-bottom:25px; } 
+
+.hero-desc { font-size:20px; opacity:.95; margin-bottom:45px; }
 /* Buttons */
 
 .hero-buttons {
