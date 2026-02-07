@@ -577,12 +577,13 @@ body {
 .footer-top {
   max-width:1300px;
   margin:auto;
+  max-height: 300px;
 
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:50px;
 
-  padding:90px 50px;
+  padding:40px 50px;
 }
 
 .footer-col h4 {
